@@ -1,3 +1,5 @@
+`reasno/fastmongo` is a coroutine-based mongodb client for Hyperf.
+
 ## Installation
 
 ```php
