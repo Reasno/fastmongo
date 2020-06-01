@@ -20,7 +20,7 @@ class IndexController
     {
         $col = $client->my_database->my_col;
         $col->insertOne(['gender' => 'male', 'age' => 18]);
-        $col->insertMany(['gender' => 'male', 'age' => 20], ['gender' => 'female', 'age' => 18]);
+        $col->insertMany([['gender' => 'male', 'age' => 20], ['gender' => 'female', 'age' => 18]]);
         $col->countDocuments();
         $col->findOne(['gender' => 'male']);
         $col->find(['gender' => 'male'], ['skip' => 1, 'limit' => 1]);
