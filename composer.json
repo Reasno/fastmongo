@@ -1,0 +1,45 @@
+{
+  "name": "reasno/fastmongo",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "php",
+    "hyperf"
+  ],
+  "description": "mongodb driver via hyperf/gotask",
+  "autoload": {
+    "psr-4": {
+      "Reasno\\Fastmongo\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "HyperfTest\\": "tests"
+    }
+  },
+  "require": {
+    "php": ">=7.2",
+    "ext-swoole": ">=4.4",
+    "hyperf/gotask": "dev-v2.1.0-dev"
+  },
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "^2.14",
+    "phpstan/phpstan": "^0.10.5",
+    "hyperf/testing": "1.1.*",
+    "swoole/ide-helper": "^4.5"
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "co-phpunit -c phpunit.xml --colors=always",
+    "analyse": "phpstan analyse --memory-limit 300M -l 0 ./src",
+    "cs-fix": "php-cs-fixer fix $1"
+  },
+  "bin": ["bin/mongo-proxy-darwin-amd64", "bin/mongo-proxy-linux-amd64"],
+  "extra": {
+    "hyperf": {
+      "config": "Reasno\\Fastmongo\\ConfigProvider"
+    }
+  }
+}
