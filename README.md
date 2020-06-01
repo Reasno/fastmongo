@@ -49,13 +49,13 @@ class IndexController
 
 This package makes use of `hyperf/gotask` to achieve coroutine.
 
-In `hyperf/gotask` v2.1.0 a new mongodb package is added. Normally GoTask requires you to do some coding in Go. However this approach requires some proficiency in Golang, which can be prohibitive. `reasno/fastmongo` is a prebuilt version of the newly added mongodb package. It will manage the Go binary for you so you don't have to.
+In `hyperf/gotask` v2.1.0 a new mongodb package is added. Normally GoTask requires you to do some coding in Go. However this approach demands some proficiency in Golang, which can be prohibitive. `reasno/fastmongo` is a prebuilt version of the newly added mongodb package. It will manage the Go binary for you so you don't have to.
 
 This package only exposes a very simple yet optimized configuration interface. Should more customization be needed, checkout out the original `hyperf/gotask`. 
 
 > Please do not turn on `hyperf/gotask` and this package at the same time.
 
 ## Future scope
-* More mongodb command can be added. Please feel free to create issues and submit your PR to `hyperf/gotask`.
+* More mongodb command can be added. Please feel free to create issues or submit your PR to `hyperf/gotask`.
 
 
