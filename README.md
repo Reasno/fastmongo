@@ -6,11 +6,11 @@
 composer require reasno/fastmongo
 ```
 
-MongoDB extension is ***NOT*** required. Hyperf and Swoole is required.
+MongoDB extension is ***NOT*** required.
 
 ## Configuration
 
-Just set environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
+Just set the environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
 
 ## API List
 
@@ -40,7 +40,7 @@ class IndexController
         $col->deleteOne(['gender' => 'male']);
         $col->deleteMany(['age' => 15]);
         $col->drop();
-        // if there is a command you cannot find, use runCommand or runCommandCursor.
+        // if there is a command not yet supported, use runCommand or runCommandCursor.
         $client->my_database->runCommand(['ping' => 1]);
         return $client->my_database->runCommandCursor(['listCollections' => 1]); 
     }
