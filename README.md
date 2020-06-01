@@ -55,6 +55,7 @@ This package only exposes a very simple yet optimized configuration interface. S
 
 > Please do not turn on `hyperf/gotask` and this package at the same time.
 
-
+## Future scope
+* More mongodb command can be added. Please feel free to create issues and submit your PR to `hyperf/gotask`.
 
 
