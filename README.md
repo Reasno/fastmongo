@@ -4,6 +4,8 @@
 composer require reasno/fastmongo
 ```
 
+MongoDB extension is ***NOT*** required.
+
 ## API List
 
 ```php
