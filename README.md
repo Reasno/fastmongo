@@ -6,6 +6,10 @@ composer require reasno/fastmongo
 
 MongoDB extension is ***NOT*** required.
 
+## Configuration
+
+Just set environmental variable MONGODB_URI.
+
 ## API List
 
 ```php
@@ -41,3 +45,4 @@ class IndexController
 }
 ```
 
+## More Documentation are coming.
