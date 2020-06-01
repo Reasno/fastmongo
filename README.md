@@ -33,6 +33,7 @@ class IndexController
         ]);
         $col->deleteOne(['gender' => 'male']);
         $col->deleteMany(['age' => 15]);
+        $col->drop();
         // if there is a command you cannot find, use runCommand or runCommandCursor.
         $client->my_database->runCommand(['ping' => 1]);
         return $client->my_database->runCommandCursor(['listCollections' => 1]); 
