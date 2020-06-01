@@ -1,4 +1,4 @@
-`reasno/fastmongo` is the a coroutine-based mongodb client for Hyperf.
+`reasno/fastmongo` is the a coroutine-based mongodb client for Hyperf, powered by `hyperf/gotask`.
 
 ## Installation
 
