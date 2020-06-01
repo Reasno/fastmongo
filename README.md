@@ -8,7 +8,7 @@ MongoDB extension is ***NOT*** required.
 
 ## Configuration
 
-Just set environmental variable MONGODB_URI.
+Just set environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
 
 ## API List
 
