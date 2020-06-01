@@ -12,6 +12,8 @@ MongoDB extension is ***NOT*** required.
 
 Just set the environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
 
+You may also use `php bin/hyperf.php vendor:publish reasno/fastmongo` to export a configuration.
+
 ## API List
 
 ```php
