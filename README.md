@@ -1,4 +1,4 @@
-`reasno/fastmongo` is a coroutine-based mongodb client for Hyperf.
+`reasno/fastmongo` is the a coroutine-based mongodb client for Hyperf.
 
 ## Installation
 
@@ -6,7 +6,7 @@
 composer require reasno/fastmongo
 ```
 
-MongoDB extension is ***NOT*** required.
+MongoDB extension is ***NOT*** required. Hyperf and Swoole is required.
 
 ## Configuration
 
