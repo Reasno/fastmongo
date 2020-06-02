@@ -1,14 +1,19 @@
+`reasno/fastmongo` is the a coroutine-based mongodb client for Hyperf, powered by `hyperf/gotask`.
+
 ## Installation
 
 ```php
 composer require reasno/fastmongo
 ```
 
-MongoDB extension is ***NOT*** required.
+- MongoDB extension is ***NOT*** required. 
+- Go is ***NOT*** required.
 
 ## Configuration
 
-Just set environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
+Just set the environmental variable MONGODB_URI. (Defaults to `mongodb://127.0.0.1:27017`)
+
+You may also use `php bin/hyperf.php vendor:publish reasno/fastmongo` to export a configuration.
 
 ## API List
 
@@ -38,11 +43,24 @@ class IndexController
         $col->deleteOne(['gender' => 'male']);
         $col->deleteMany(['age' => 15]);
         $col->drop();
-        // if there is a command you cannot find, use runCommand or runCommandCursor.
+        // if there is a command not yet supported, use runCommand or runCommandCursor.
         $client->my_database->runCommand(['ping' => 1]);
         return $client->my_database->runCommandCursor(['listCollections' => 1]); 
     }
 }
 ```
 
-## More Documentation are coming.
+## Background
+
+This package makes use of `hyperf/gotask` to achieve coroutine.
+
+In `hyperf/gotask` v2.1.0 a new mongodb package is added. Normally GoTask requires you to do some coding in Go. However this approach demands some proficiency in Go, which can be prohibitive. `reasno/fastmongo` is a prebuilt version of the newly added mongodb package. It vendors the Go binary for you so you don't have to compile your own.
+
+This package only exposes a very simple yet optimized configuration interface. Should more customization be needed, checkout out the original `hyperf/gotask`. 
+
+> Please do not turn on `hyperf/gotask` and this package at the same time.
+
+## Future Scope
+* More mongodb commands can be added. Please feel free to create issues or submit your PRs to `hyperf/gotask`.
+
+
