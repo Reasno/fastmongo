@@ -20,7 +20,7 @@
   "require": {
     "php": ">=7.2",
     "ext-swoole": ">=4.4",
-    "ext-mongo": "*",
+    "ext-mongodb": "*",
     "hyperf/gotask": "^2.2"
   },
   "require-dev": {
