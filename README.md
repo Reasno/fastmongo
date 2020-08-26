@@ -5,8 +5,8 @@
 ```php
 composer require reasno/fastmongo
 ```
-
-- MongoDB extension is ***NOT*** required. 
+- MongoDB extension is required. 
+- MongoDB PHP library is ***NOT*** required.
 - Go is ***NOT*** required.
 
 ## Configuration
