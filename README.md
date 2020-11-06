@@ -7,6 +7,7 @@ composer require reasno/fastmongo
 ```
 - MongoDB extension is required. 
 - MongoDB PHP library is ***NOT*** required.
+- MongoDB > 4.0
 - Go is ***NOT*** required.
 
 ## Configuration
