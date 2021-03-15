@@ -49,7 +49,8 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
 
     public function getAddress(): string
     {
-        return $this->addr;
+        $addr = parent::getAddress();
+        return !empty($addr) ? $addr : $this->addr;
     }
 
     public function isEnabled(): bool
