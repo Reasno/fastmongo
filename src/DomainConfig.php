@@ -1,17 +1,26 @@
 <?php
 
-
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
 namespace Reasno\Fastmongo;
-
 
 use Hyperf\Contract\ConfigInterface;
 
 class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
 {
-
     private $uri;
+
     private $readWriteTimeout;
+
     private $connectTimeout;
+
     /**
      * @var string
      */
@@ -21,7 +30,7 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
     {
         parent::__construct($config);
         $this->addr = \Hyperf\GoTask\ConfigProvider::address();
-        $this->uri = $config->get('mongodb.uri', "mongodb://127.0.0.1:27017");
+        $this->uri = $config->get('mongodb.uri', 'mongodb://127.0.0.1:27017');
         $this->readWriteTimeout = $config->get('mongodb.read_write_timeout', '60s');
         $this->connectTimeout = $config->get('mongodb.connect_timeout', '3s');
     }
@@ -38,7 +47,7 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
     {
         $args = parent::getArgs();
         return array_merge($args, [
-           '-mongodb-uri',
+            '-mongodb-uri',
             $this->uri,
             '-mongodb-connect-timeout',
             $this->connectTimeout,
@@ -50,7 +59,7 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
     public function getAddress(): string
     {
         $addr = parent::getAddress();
-        return !empty($addr) ? $addr : $this->addr;
+        return ! empty($addr) ? $addr : $this->addr;
     }
 
     public function isEnabled(): bool
@@ -58,7 +67,8 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
         return true;
     }
 
-    private function isMac() {
+    private function isMac()
+    {
         return in_array(PHP_OS, [
             'Darwin',
         ]);
