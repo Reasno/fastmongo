@@ -39,7 +39,7 @@
 	"analyse": "phpstan analyse --memory-limit 300M -l 0 ./src",
 	"cs-fix": "php-cs-fixer fix $1"
     },
-    "bin": ["bin/mongo-proxy-darwin-amd64", "bin/mongo-proxy-linux-amd64"],
+    "bin": ["bin/mongo-proxy-darwin-amd64", "bin/mongo-proxy-darwin-arm64", "bin/mongo-proxy-linux-amd64"],
     "extra": {
 	"hyperf": {
 	    "config": "Reasno\\Fastmongo\\ConfigProvider"
