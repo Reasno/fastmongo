@@ -29,7 +29,12 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
     public function getExecutable(): string
     {
         if ($this->isMac()) {
-            return BASE_PATH . '/vendor/bin/mongo-proxy-darwin-amd64';
+            $cpuInfo = php_uname('m');
+            if ($cpuInfo === 'arm64') {
+                return BASE_PATH . '/vendor/bin/mongo-proxy-darwin-arm64';
+            } else {
+                return BASE_PATH . '/vendor/bin/mongo-proxy-darwin-amd64';
+            }
         }
         return BASE_PATH . '/vendor/bin/mongo-proxy-linux-amd64';
     }
