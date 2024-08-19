@@ -37,10 +37,9 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
 
     public function getExecutable(): string
     {
-        if ($this->isMac()) {
-            return BASE_PATH . '/vendor/bin/mongo-proxy-darwin-amd64';
-        }
-        return BASE_PATH . '/vendor/bin/mongo-proxy-linux-amd64';
+        $os = ($this->isMac()) ? "darwin" : "linux";
+        $arch = ($this->isArm()) ? "arm64" : "amd64";
+        return BASE_PATH . '/vendor/bin/mongo-proxy-' . $os . '-' . $arch;
     }
 
     public function getArgs(): array
@@ -72,5 +71,9 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
         return in_array(PHP_OS, [
             'Darwin',
         ]);
+    }
+    private function isArm()
+    {
+        return php_uname("m") == 'aarch64';
     }
 }

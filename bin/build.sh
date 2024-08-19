@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-package=../example/mongo_client/sidecar.go
+package=../../gotask/example/mongo_client/sidecar.go
 package_name=mongo-proxy
 
 #the full list of the platforms: https://golang.org/doc/install/source#environment
 platforms=(
 "darwin/amd64"
 "linux/amd64"
+"darwin/arm64"
+"linux/arm64"
 )
 
 for platform in "${platforms[@]}"
