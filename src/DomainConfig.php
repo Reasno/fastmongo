@@ -74,6 +74,6 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
     }
     private function isArm()
     {
-        return php_uname("m") == 'aarch64';
+        return php_uname("m") === 'aarch64';
     }
 }
