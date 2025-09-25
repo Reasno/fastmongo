@@ -69,7 +69,7 @@ class DomainConfig extends \Hyperf\GoTask\Config\DomainConfig
 
     public function isEnabled(): bool
     {
-        return true;
+        return ! empty($this->uri);
     }
 
     private function isMac()
